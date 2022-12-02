@@ -27,7 +27,7 @@ class MapperTest(unittest.TestCase):
 
     def test_should_convert_movie_to_dataframe(self):
         # given
-        movie = movie(title='matrix',
+        movie = Movie(title='matrix',
                             director='wachowski',
                             year=1999,
                             genre='action')

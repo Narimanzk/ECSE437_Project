@@ -7,7 +7,7 @@ class MovieValidationServiceTest(unittest.TestCase):
 
     def test_should_raise_an_exception_when_title_is_invalid(self):
         # given
-        title = 'matrics'
+        title = 'matrics8'
 
         # when
         with self.assertRaises(Exception) as context:

@@ -39,7 +39,7 @@ class MovieServiceTest(unittest.TestCase):
 
         # when
         with self.assertRaises(Exception) as context:
-            movie_service.get_movie_by_title('matrics')
+            movie_service.get_movie_by_title('matrics8')
 
         # then
         self.assertTrue('title is invalid.' in str(context.exception))
