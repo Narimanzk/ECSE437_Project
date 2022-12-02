@@ -2,7 +2,7 @@ from src.service.organization_service import OrganizationService
 from src.service.ticket_service import TicketService
 
 
-class ConcertService:
+class ShowService:
 
     def __init__(self):
         self.__organization_service = OrganizationService()
