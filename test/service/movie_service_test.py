@@ -42,4 +42,4 @@ class MovieServiceTest(unittest.TestCase):
             movie_service.get_movie_by_title('matrics8')
 
         # then
-        self.assertTrue('title is invalid.' in str(context.exception))
+        self.assertTrue('Title is invalid.' in str(context.exception))
