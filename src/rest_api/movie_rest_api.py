@@ -11,6 +11,10 @@ class MovieRestApi(FastAPI):
     def __init__(self, movie_service: MovieService):
         super(MovieRestApi, self).__init__()
 
+        @self.get("/")
+        def root():
+            return {"message": "Welcome to movie app"}
+
         @self.get("/api/v1/fetch-by-title")
         def fetch_movie_by_title(title: str) -> Movie:
             return movie_service.get_movie_by_title(title)
