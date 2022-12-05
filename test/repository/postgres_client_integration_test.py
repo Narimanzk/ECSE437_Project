@@ -86,7 +86,7 @@ class PostgresClientIntegrationTest(unittest.TestCase, AbstractIntegrationTestCl
         movie_fetched = pd.read_sql(query, con=connection)
 
         self.assertIsNotNone(movie_fetched)
-        self.assertEqual(movie_fetched.iloc[0]['tile'], 'Superbad')
+        self.assertEqual(movie_fetched.iloc[0]['title'], 'Superbad')
         self.assertEqual(movie_fetched.iloc[0]['director'], 'Greg Mottola')
         self.assertEqual(movie_fetched.iloc[0]['year'], 2007)
         self.assertEqual(movie_fetched.iloc[0]['genre'], 'comedy')

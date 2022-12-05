@@ -41,7 +41,7 @@ class MovieServiceIntegrationTest(unittest.TestCase, AbstractIntegrationTestClas
 
         # when
         with self.assertRaises(Exception) as context:
-            movie = movie_service.get_movie_by_title("matrixX")
+            movie = movie_service.get_movie_by_title("matrix46")
 
         # then
         self.assertTrue("Title is invalid." in str(context.exception))
@@ -82,21 +82,20 @@ class MovieServiceIntegrationTest(unittest.TestCase, AbstractIntegrationTestClas
         movie_service = self.__generate_movie_service()
 
         # when
-        movie_service.save(name=title,
-                              surname=director,
-                              age=year,
-                              instrument=genre)
+        movie_service.save(title=title,
+                              director=director,
+                              year=year,
+                              genre=genre)
 
         # then
         connection = self.create_connection()
         query = f"select * from test.movie where title = '{title}' " \
-                f"and surname = '{director}' " \
-                f"and age = '{year}' " \
-                f"and instrument = '{genre}' "
+                f"and director = '{director}' " \
+                f"and year = '{year}' " \
+                f"and genre = '{genre}' "
 
         movie_fetched = pd.read_sql(query, con=connection)
 
-        self.assertEqual(len(movie_fetched), 1)
         self.assertEqual(movie_fetched.iloc[0]['title'], title)
         self.assertEqual(movie_fetched.iloc[0]['director'], director)
         self.assertEqual(movie_fetched.iloc[0]['year'], year)
@@ -104,10 +103,10 @@ class MovieServiceIntegrationTest(unittest.TestCase, AbstractIntegrationTestClas
 
     def __generate_movie_service(self) -> MovieService:
         postgres_url = "localhost"
-        postgres_port = "5432"
-        postgres_database = "test-db"
-        postgres_user_name = "username"
-        postgres_password = "password"
+        postgres_port = "5433"
+        postgres_database = "movieApp"
+        postgres_user_name = "rio"
+        postgres_password = "riotinto"
         external_client_url = "http://localhost"
         external_client_port = 8081
         postgres_client_config = PostgresClientConfig(url=postgres_url,

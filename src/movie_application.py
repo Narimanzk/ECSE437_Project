@@ -11,10 +11,10 @@ from src.service.movie_service import MovieService
 
 def start_application() -> MovieRestApi:
     postgres_url = "localhost"
-    postgres_port = "5432"
-    postgres_database = "test-db"
-    postgres_user_name = "username"
-    postgres_password = "password"
+    postgres_port = "5433"
+    postgres_database = "movieApp"
+    postgres_user_name = "rio"
+    postgres_password = "riotinto"
 
     external_client_url = "http://localhost"
     external_client_port = 8081

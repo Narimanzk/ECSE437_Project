@@ -22,5 +22,5 @@ class MockServerIntegrationTest(unittest.TestCase):
         self.assertIn('hello', response.json())
         self.assertEqual('welt', response.json()['hello'])
 
-    def tearDown(self):
-        self.server.shutdown_server()
+    # def tearDown(self):
+    #     self.server.shutdown_server()

@@ -11,9 +11,9 @@ class ExternalMovieClientIntegrationTest(unittest.TestCase, AbstractIntegrationT
     def setUpClass(cls) -> None:
         cls.setup()
 
-    @classmethod
-    def tearDownClass(cls) -> None:
-        cls.tear_down()
+    # @classmethod
+    # def tearDownClass(cls) -> None:
+    #     cls.tear_down()
 
     def test_should_get_all_movie_titles(self):
         # given

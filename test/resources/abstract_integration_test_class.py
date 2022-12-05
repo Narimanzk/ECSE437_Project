@@ -32,10 +32,10 @@ class AbstractIntegrationTestClass(ABC):
     @classmethod
     def setup(cls) -> None:
         cls.postgres_url = "localhost"
-        cls.postgres_port = "5432"
-        cls.postgres_database = "test-db"
-        cls.postgres_user_name = "username"
-        cls.postgres_password = "password"
+        cls.postgres_port = "5433"
+        cls.postgres_database = "movieApp"
+        cls.postgres_user_name = "rio"
+        cls.postgres_password = "riotinto"
         cls.client_url = "http://localhost"
         cls.client_port = 8081
 
@@ -54,7 +54,7 @@ class AbstractIntegrationTestClass(ABC):
 
         cls.server = MockServer(url=cls.client_url, port=cls.client_port)
         cls.server.start()
-        cls.server.add_json_response("/fetch-all-names", dict(movie_titles=["matrix", "goodfellas", "se7en"]))
+        cls.server.add_json_response("/fetch-all-titles", dict(movie_titles=["matrix", "goodfellas", "se7en"]))
 
         time.sleep(5)
 
