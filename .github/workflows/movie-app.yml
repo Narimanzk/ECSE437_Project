@@ -37,6 +37,3 @@ jobs:
     - name: Unit test with pytest
       run: |
         pytest test/ -k 'test and not integration'
-    - name: Integration test with pytest
-      run: |
-        pytest test/ -k 'integration'
